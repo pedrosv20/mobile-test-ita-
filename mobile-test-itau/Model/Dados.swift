@@ -8,7 +8,7 @@
 
 import Foundation
 
-//Exemplo de comunicaçao com API
+//Exemplo de dados recebidos na comunicaçao por API
 
 var dadosClienteJson = """
 {
@@ -17,31 +17,31 @@ var dadosClienteJson = """
     "saldo_Poupanca": 15340.00,
     "contatos": [
         {
-            "nome": "André"
+            "nome": "André Carvalho"
         },
         {
-            "nome": "Joao"
+            "nome": "João Oliveira"
         },
         {
-            "nome": "Ana"
+            "nome": "Ana Araújo"
         },
         {
-            "nome": "Carlos"
+            "nome": "Carlos Marques"
         },
         {
-            "nome": "Carol"
+            "nome": "Carol dos Santos"
         },
         {
-            "nome": "Thiago"
+            "nome": "Thiago Pinheiro"
         },
         {
-            "nome": "Julia"
+            "nome": "Julia Figueiredo"
         },
         {
-            "nome": "Lucas"
+            "nome": "Lucas Bastos"
         },
         {
-            "nome": "José"
+            "nome": "José Costa"
         }
     ]
 }

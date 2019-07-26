@@ -14,10 +14,10 @@
 		0704EC6922E6AFFF00FDBB3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0704EC6722E6AFFF00FDBB3D /* LaunchScreen.storyboard */; };
 		0704EC7422E6AFFF00FDBB3D /* mobile_test_itauTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0704EC7322E6AFFF00FDBB3D /* mobile_test_itauTests.swift */; };
 		0704EC7F22E6AFFF00FDBB3D /* mobile_test_itauUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0704EC7E22E6AFFF00FDBB3D /* mobile_test_itauUITests.swift */; };
+		0719AD6122E7E83E00E88D42 /* PagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719AD6022E7E83E00E88D42 /* PagamentoViewController.swift */; };
 		071A383522E6B073001E851F /* Dados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A383422E6B073001E851F /* Dados.swift */; };
 		071A383A22E6BB93001E851F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A383922E6BB93001E851F /* Model.swift */; };
 		071A383C22E6C627001E851F /* TransferenciaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A383B22E6C627001E851F /* TransferenciaTableViewController.swift */; };
-		071A383E22E6C745001E851F /* TransferenciaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A383D22E6C745001E851F /* TransferenciaTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +51,10 @@
 		0704EC7A22E6AFFF00FDBB3D /* mobile-test-itauUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile-test-itauUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0704EC7E22E6AFFF00FDBB3D /* mobile_test_itauUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_test_itauUITests.swift; sourceTree = "<group>"; };
 		0704EC8022E6AFFF00FDBB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0719AD6022E7E83E00E88D42 /* PagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoViewController.swift; sourceTree = "<group>"; };
 		071A383422E6B073001E851F /* Dados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dados.swift; sourceTree = "<group>"; };
 		071A383922E6BB93001E851F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		071A383B22E6C627001E851F /* TransferenciaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferenciaTableViewController.swift; sourceTree = "<group>"; };
-		071A383D22E6C745001E851F /* TransferenciaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferenciaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,15 +105,12 @@
 		0704EC5D22E6AFFD00FDBB3D /* mobile-test-itau */ = {
 			isa = PBXGroup;
 			children = (
+				0770050822EA96EE00D2B4DC /* Model */,
+				0770050622EA96E100D2B4DC /* Controller */,
 				0704EC5E22E6AFFD00FDBB3D /* AppDelegate.swift */,
-				0704EC6022E6AFFD00FDBB3D /* ViewController.swift */,
-				071A383422E6B073001E851F /* Dados.swift */,
-				071A383922E6BB93001E851F /* Model.swift */,
-				071A383B22E6C627001E851F /* TransferenciaTableViewController.swift */,
-				071A383D22E6C745001E851F /* TransferenciaTableViewCell.swift */,
 				0704EC6222E6AFFD00FDBB3D /* Main.storyboard */,
-				0704EC6522E6AFFF00FDBB3D /* Assets.xcassets */,
 				0704EC6722E6AFFF00FDBB3D /* LaunchScreen.storyboard */,
+				0704EC6522E6AFFF00FDBB3D /* Assets.xcassets */,
 				0704EC6A22E6AFFF00FDBB3D /* Info.plist */,
 			);
 			path = "mobile-test-itau";
@@ -135,6 +132,25 @@
 				0704EC8022E6AFFF00FDBB3D /* Info.plist */,
 			);
 			path = "mobile-test-itauUITests";
+			sourceTree = "<group>";
+		};
+		0770050622EA96E100D2B4DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0704EC6022E6AFFD00FDBB3D /* ViewController.swift */,
+				071A383B22E6C627001E851F /* TransferenciaTableViewController.swift */,
+				0719AD6022E7E83E00E88D42 /* PagamentoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0770050822EA96EE00D2B4DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				071A383422E6B073001E851F /* Dados.swift */,
+				071A383922E6BB93001E851F /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +286,10 @@
 			files = (
 				0704EC6122E6AFFD00FDBB3D /* ViewController.swift in Sources */,
 				071A383C22E6C627001E851F /* TransferenciaTableViewController.swift in Sources */,
-				071A383E22E6C745001E851F /* TransferenciaTableViewCell.swift in Sources */,
 				071A383522E6B073001E851F /* Dados.swift in Sources */,
 				0704EC5F22E6AFFD00FDBB3D /* AppDelegate.swift in Sources */,
 				071A383A22E6BB93001E851F /* Model.swift in Sources */,
+				0719AD6122E7E83E00E88D42 /* PagamentoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

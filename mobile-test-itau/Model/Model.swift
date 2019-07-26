@@ -9,19 +9,33 @@
 import Foundation
 
 class Model{
-    
     static let shared = Model()
     
-    
-    var nomeCliente: String = ""
+    private init(){
+        diaTransferencia = UserDefaults.standard.string(forKey: "diaTransferencia")
+        valorTransferido = UserDefaults.standard.double(forKey: "valorTransferido")
+    }
+
+    var nomeCliente: String = "" // criado pois em um app maior seria necessario
     var contaPoupanca: Double = 0
     var contaCorrente: Double = 0
     var contatos: [String] = []
-    
+    var tipoConta: Int!
+    var contatoSelecionado = ""
+    var valorTransferido: Double{
+        didSet{
+            UserDefaults.standard.set(self.valorTransferido, forKey: "valorTransferido")
+        }
+    }
+    var diaTransferencia: String!{
+        didSet{
+            UserDefaults.standard.set(self.diaTransferencia, forKey: "diaTransferencia")
+        }
+    }
     
     func resgatarDados(){
         Dados.acessarDados { json in
-            
+            //exemplo acessando dados de uma API
             guard let Dados = json else { return }
             do {
                 if let DadosCliente = try JSONSerialization.jsonObject(with: Dados, options: []) as? [String: Any] {
@@ -49,6 +63,6 @@ class Model{
         }
     }
     
-    private init(){}
+   
     
 }
