@@ -34,7 +34,6 @@ class PagamentoViewController: UIViewController {
         }
         // verifica o dia da ultima transferencia feita, se os dias forem diferentes, o limite de 10 mil reais é zerado
         verificaDia()
-        
         let limiteTeste = Double(valorTransferencia.text!)!
         // verifica se a pessoa ja transferiu 10 mil ou o valor inserido para transferir é maior
         if Model.shared.valorTransferido >= 10000 || Double(valorTransferencia.text!)! > 10000 {
