@@ -28,13 +28,17 @@ class PagamentoViewController: UIViewController {
     
     
     @IBAction func botaoConfirmar(_ sender: Any) {
+        
+        if valorTransferencia.text == "" {
+            return
+        }
         // verifica o dia da ultima transferencia feita, se os dias forem diferentes, o limite de 10 mil reais é zerado
         verificaDia()
         
         let limiteTeste = Double(valorTransferencia.text!)!
         // verifica se a pessoa ja transferiu 10 mil ou o valor inserido para transferir é maior
         if Model.shared.valorTransferido >= 10000 || Double(valorTransferencia.text!)! > 10000 {
-            let alert = UIAlertController(title: "Valor maximo atingido", message: "Só é possivel transferir até R$ 10.000 por dia, tente novamente amanhã", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Valor máximo atingido", message: "Só é possivel transferir até R$ 10.000 por dia, tente novamente amanhã", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
@@ -43,7 +47,7 @@ class PagamentoViewController: UIViewController {
         }
         // verifica se com o valor inserido, o limite vai ser maior que 10 mil
         if  limiteTeste + Model.shared.valorTransferido > 10000{
-            let alert = UIAlertController(title: "Operação negada", message: "O valor de sua transferencia irá exceder o valor limite diario, tente um valor menor ou espere até amanha", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Operação negada", message: "O valor de sua transferência irá exceder o valor limite diário, tente um valor menor ou espere até amanhã", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
@@ -64,14 +68,14 @@ class PagamentoViewController: UIViewController {
                 
                 Model.shared.valorTransferido += transf
                 Model.shared.contaCorrente -= transf
-                let alert = UIAlertController(title: "Sucesso", message: "transferencia feita com sucesso", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Sucesso", message: "Transferência feita com sucesso", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true)
                 atualizaInformacoes()
             }
             else{
-                let alert = UIAlertController(title: "Saldo Insuficiente", message: "por favor insira um valor de acordo com sua conta bancaria", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Saldo Insuficiente", message: "Por favor insira um valor de acordo com sua conta bancaria", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true)
@@ -82,7 +86,7 @@ class PagamentoViewController: UIViewController {
             if Model.shared.contaPoupanca >= transf{
                 Model.shared.valorTransferido += transf
                 Model.shared.contaPoupanca -= transf
-                let alert = UIAlertController(title: "Sucesso", message: "transferencia feita com sucesso", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Sucesso", message: "Transferência feita com sucesso", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true)
@@ -90,7 +94,7 @@ class PagamentoViewController: UIViewController {
                 
             }
             else{
-                let alert = UIAlertController(title: "Saldo Insuficiente", message: "por favor insira um valor de acordo com sua conta bancaria", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Saldo Insuficiente", message: "Por favor insira um valor de acordo com sua conta bancaria", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true)
